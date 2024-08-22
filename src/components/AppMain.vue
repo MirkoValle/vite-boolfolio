@@ -1,6 +1,10 @@
 <script>
 import axios from 'axios';
+import ProjectCard from './ProjectCard.vue';
 export default{
+    components:{
+        ProjectCard
+    },
     data() {
         return{
             projects: [],
@@ -29,17 +33,16 @@ export default{
 </script>
 
 <template>
-    <h1>
-        Main
-    </h1>
-
-    <ul>
-        <li v-for="project in projects">
-            {{ project.nome }}
-        </li>
-    </ul>
+    <div>
+        <ProjectCard v-for="project in projects" :project="project"/>
+    </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+
+div{
+    background-color: rgb(233, 233, 233);
+    padding: 2rem;
+}
 
 </style>
